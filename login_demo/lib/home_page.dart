@@ -16,18 +16,36 @@ Future navigateToSubPage(context) async {
   Widget build(BuildContext context) {
     
     return new Scaffold(
-      appBar : new AppBar (title: new Text('Cap App '),
+      appBar : new AppBar (title: new Text('Cupertino Store'),backgroundColor:Colors.redAccent,
       actions: <Widget>[
-        new FlatButton(onPressed: (){
-            auth.signOut();
+        new RaisedButton(textColor: Colors.white,
+              color: Colors.redAccent,
+              child: Text('Logout'),
+              onPressed: () {
+               
+                 auth.signOut();
     navigateToSubPage(context);
-  
-        }, 
-        child: new Text('Logout', style : new TextStyle(fontSize:16.0 , color : Colors.redAccent )))
+              },
+       ),
       ],
       ),
-      body: new Container(
-        child : new Center(child: new Text('Lougout ! ', style : new TextStyle(fontSize:32.0)) ,)
+    body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('Click button to Logout'),
+            RaisedButton(
+              textColor: Colors.white,
+              color: Colors.redAccent,
+              child: Text('Logout'),
+              onPressed: () {
+             
+                 auth.signOut();
+    navigateToSubPage(context);
+              },
+            )
+          ],
+        ),
       ),
     );
   }

@@ -95,7 +95,7 @@ FormType _formType = FormType.login;
                 margin: EdgeInsets.all(5.0),
                 child: Center(
                   child: Text(
-                    "Login",
+                    "Cupertino Store",
                     style: TextStyle(
                         color: Colors.white,
                         fontSize: 20,
@@ -170,13 +170,22 @@ return[
 } else{
   
   return[
+             SizedBox(height: 20.0),
+
    new RaisedButton(
             child : new Text('Create an account ',style : new TextStyle(fontSize: 21.0)),
             onPressed: validateAndSubmit,
+            padding: EdgeInsets.all(10.0),
+              color: Colors.blue,
+              textColor: Colors.white
           ),
+          SizedBox(height: 20.0),
           new FlatButton(
             child: new Text('Already have an account ? login' , style: new TextStyle(fontSize : 21.0)),
             onPressed: moveToLogin,
+            padding: EdgeInsets.all(10.0),
+              color: Colors.blue,
+              textColor: Colors.white
             )
 ];
 }

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'login_page.dart';
 import 'auth.dart';
 import 'home_page.dart';
+import 'app.dart';
+
 class RootPage extends StatefulWidget{
   RootPage({this.auth});
   final BaseAuth auth;
@@ -51,7 +53,8 @@ enum AuthStatus {
         
         );
       case AuthStatus.signedIn :
-      return new HomePage(auth:widget.auth,onSignedOut: _signedout,);
+     //  return new HomePage(auth:widget.auth,onSignedOut: _signedout,);
+      return new CupertinoStoreApp(auth:widget.auth,);
     }
 
   }

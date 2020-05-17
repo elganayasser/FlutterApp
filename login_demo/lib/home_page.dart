@@ -20,14 +20,14 @@ void _signOut() async{
   Widget build(BuildContext context) {
     
     return new Scaffold(
-      appBar : new AppBar (title: new Text('Welcome'),
+      appBar : new AppBar (title: new Text('Cap App '),
       actions: <Widget>[
         new FlatButton(onPressed: _signOut, 
         child: new Text('Logout', style : new TextStyle(fontSize:16.0 , color : Colors.redAccent )))
       ],
       ),
       body: new Container(
-        child : new Center(child: new Text('Welcome', style : new TextStyle(fontSize:32.0)) ,)
+        child : new Center(child: new Text('Lougout ! ', style : new TextStyle(fontSize:32.0)) ,)
       ),
     );
   }

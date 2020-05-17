@@ -35,14 +35,15 @@ FormType _formType = FormType.login;
   
      if(validateAndSave()){
        try{ 
+         
         if(_formType==FormType.login){
           String userID = await widget.auth.signInWithEmailAndPassword(_email, _password);
      
-          print('Signed in : ${userID}');
+         // print('Signed in : ${userID}');
       } else{
         String userId = await widget.auth.createUserWithEmailAndPassword(_email, _password);
      
-         print('Registred User : ${userId}');
+        // print('Registred User : ${userId}');
  }
          widget.onSignedIn();
  

@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'login_page.dart';
+import 'package:provider/provider.dart';
+import 'model/app_state_model.dart'; 
 import 'auth.dart';
+import 'home_page.dart';
 import 'root_page.dart';
 void main(){
-  runApp(new MyApp());
+ return runApp(
+   
+   ChangeNotifierProvider<AppStateModel>(           
+     builder: (context) => AppStateModel()..loadProducts(), 
+     child: MyApp(),                   
+   ),
+ );
 }
 
 class MyApp extends StatelessWidget{
@@ -16,6 +25,7 @@ class MyApp extends StatelessWidget{
       theme : new ThemeData(
       primarySwatch: Colors.blue,
       ),
+      
       home : new RootPage(auth : new Auth())
     );
   }
